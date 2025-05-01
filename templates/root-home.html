@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Home</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='non-root-login.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>root_Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='root-home.css') }}">
 </head>
+
 <body>
-    <form action="/root_home" method="POST">
-     <h1>devil</h1>
-    </form>
+    <div action="/root_home" method="POST" class="container">
+        <div class="part1">
+            <select name="option" id="" class="select">
+                <option value="0">None</option>
+                <option value="1">option 1</option>
+                <option value="2">option 2</option>
+                <option value="3">option 3</option>
+                <option value="4">option 4</option>
+                <option value="5">option 5</option>
+            </select>
+        </div>
+        <div class="part2">
+            <h2>Enter 10 Questions</h2>
+            <form method="POST" action="/submit">
+                {% for i in range(10) %}
+                <h4>Question {{ i+1 }}</h4>
+                Question: <input type="Question" id="{{ i }}" name="question_{{ i }}" class="qus" placeholder=" Question..."><br>
+               <a>A: <input type="option1" name="option_a_{{ i }}" class="option1 option1234" placeholder=" option1..."></a>
+               <a>B: <input type="option2" name="option_b_{{ i }}" class="option2 option1234" placeholder=" option2..."></a><br>
+               <a>c: <input type="option3" name="option_c_{{ i }}" class="option3 option1234" placeholder=" option3..."></a>
+               <a>d: <input type="option4" name="option_d_{{ i }}" class="option4 option1234" placeholder=" option4..."></a><br>
+                Correct Option (A/B/C/D): <input type="Correct_Option" name="correct_option_{{ i }}" class="correct_option option1234" placeholder="select correct option..."><br><br>
+                {% endfor %}
+                <button type="submit" class="sub_btn">Save Questions</button>
+            </form>
+        </div>
+    </div>
 </body>
+
 </html>
+
+<!-- <select name="option" id="" class="select">
+    <option value="0">None</option>
+    <option value="1">option 1</option>
+    <option value="2">option 2</option>
+    <option value="3">option 3</option>
+    <option value="4">option 4</option>
+    <option value="5">option 5</option>
+</select>
+</div>
+<div class="part2">
+<h2>Enter 10 Questions</h2>
+<form method="POST" action="/submit">
+    {% for i in range(10) %}
+    <h4>Question {{ i+1 }}</h4>
+    Question: <input type="text" name="question_{{ i }}"><br>
+    A: <input type="text" name="option_a_{{ i }}"><br>
+    B: <input type="text" name="option_b_{{ i }}"><br>
+    C: <input type="text" name="option_c_{{ i }}"><br>
+    D: <input type="text" name="option_d_{{ i }}"><br>
+    Correct Option (A/B/C/D): <input type="text" name="correct_option_{{ i }}"><br><br>
+    {% endfor %}
+    <button type="submit">Save Questions</button>
+</form>
+</div> -->

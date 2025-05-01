@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.part1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 160px;
+    background-color: rgb(214, 218, 226);
+    border-right: 1px solid rgb(192, 189, 189);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.select {
+    height: 35px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.part2 {
+    margin-left: 160px;
+    padding: 30px;
+    background-color: rgb(192, 212, 250);
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.qus{
+    height: 35px;
+    width: 70%;
+    font-size: 19px;
+    border-radius: 10px;
+}
+.option1234{
+    height: 30px;
+    width: 30%;
+    font-size: 18px;  
+    border-radius: 30px;
+    margin-top: 30px;
+    
+}
+a{
+    margin-left: 65px;
+}
+.sub_btn{
+    height: 40px;
+    margin-left: 40%;
+    margin-top: 50px;
+    background-color: rgb(247, 174, 174);
+    border-radius: 10px;
+    font-size: 15px;
+}
