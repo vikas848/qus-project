@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <div action="/root-home.html" method="POST" class="container">
+    <div action="/type3.html" method="POST" class="container">
         <div class="part1">
             <label for="option">Select Option:</label>
             <select name="option" id="option" class="select" onchange="handleRedirect(this.value)">
-                <option value="0">None</option>
-                <!-- <option value="root-home.html">None</option> -->
+                <option value="0">Option 3</option>
+                <option value="root-home.html">None</option>
                 <option value="type1.html">Option 1</option>
                 <option value="type2.html">Option 2</option>
-                <option value="type3.html">Option 3</option>
+                <!-- <option value="type3.html">Option 3</option> -->
                 <option value="type4.html">Option 4</option>
                 <option value="type5.html">Option 5</option>
             </select>
@@ -31,8 +31,8 @@
             }
         </script>
         <div class="part2">
-            <h2>Enter 10 Questions</h2>
-            <form method="POST" action="/root-home">
+            <h2>Enter 13 Questions</h2>
+            <form method="POST" action="/type3">
                 {% for i in range(10) %}
                 <h4>Question {{ i+1 }}</h4>
                 Question: <input type="Question" id="{{ i }}" name="question_{{ i }}" class="qus" placeholder=" Question..."><br>

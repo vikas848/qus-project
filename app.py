@@ -86,19 +86,19 @@ def root_login():
 
         if email == '6391782926vs@gmail.com' and password == '9569':
             session['user'] = email 
-            return redirect(url_for('root_home'))
+            return redirect(url_for('root_home_html'))
         else:
             error = "Invalid username or password"
             return render_template('root-login.html', error=error)
 
     return render_template('root-login.html') 
 
-@app.route('/root-home')
-def root_home():
+@app.route('/root-home.html')
+def root_home_html():
     return render_template('root-home.html')
 
-@app.route('/submit', methods=['POST'])
-def submit():
+@app.route('/root-home', methods=['POST'])
+def root_home():
     for i in range(10):
         question = request.form.get(f'question_{i}') or None
         option_a = request.form.get(f'option_a_{i}') or None
@@ -119,6 +119,136 @@ def submit():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('root_home'))
 
+@app.route('/type1.html')
+def type1_html():
+    return render_template('type1.html')
+
+@app.route('/type1', methods=['POST'])
+def type1():
+    for i in range(10):
+        question = request.form.get(f'question_{i}') or None
+        option_a = request.form.get(f'option_a_{i}') or None
+        option_b = request.form.get(f'option_b_{i}') or None
+        option_c = request.form.get(f'option_c_{i}') or None
+        option_d = request.form.get(f'option_d_{i}') or None
+        correct_option = request.form.get(f'correct_option_{i}') or None
+
+        try:
+            qus_cursor.execute("""
+                INSERT INTO save_qus_type1 (Question, option1, option2, option3, option4, Correct_Option)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (question, option_a, option_b, option_c, option_d, correct_option))
+        except mysql.connector.Error as e:
+            flash(f"Question {i+1} save nahi hua. Error: {str(e)}", "danger")
+
+    qus_db.commit()
+    flash("Questions save ho gaye!", "success")
+    return redirect(url_for('type1_html'))
+
+@app.route('/type2.html')
+def type2_html():
+    return render_template('type2.html')
+
+@app.route('/type2', methods=['POST'])
+def type2():
+    for i in range(10):
+        question = request.form.get(f'question_{i}') or None
+        option_a = request.form.get(f'option_a_{i}') or None
+        option_b = request.form.get(f'option_b_{i}') or None
+        option_c = request.form.get(f'option_c_{i}') or None
+        option_d = request.form.get(f'option_d_{i}') or None
+        correct_option = request.form.get(f'correct_option_{i}') or None
+
+        try:
+            qus_cursor.execute("""
+                INSERT INTO save_qus_type2 (Question, option1, option2, option3, option4, Correct_Option)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (question, option_a, option_b, option_c, option_d, correct_option))
+        except mysql.connector.Error as e:
+            flash(f"Question {i+1} save nahi hua. Error: {str(e)}", "danger")
+
+    qus_db.commit()
+    flash("Questions save ho gaye!", "success")
+    return redirect(url_for('type2_html'))
+
+@app.route('/type3.html')
+def type3_html():
+    return render_template('type3.html')
+
+@app.route('/type3', methods=['POST'])
+def type3():
+    for i in range(10):
+        question = request.form.get(f'question_{i}') or None
+        option_a = request.form.get(f'option_a_{i}') or None
+        option_b = request.form.get(f'option_b_{i}') or None
+        option_c = request.form.get(f'option_c_{i}') or None
+        option_d = request.form.get(f'option_d_{i}') or None
+        correct_option = request.form.get(f'correct_option_{i}') or None
+
+        try:
+            qus_cursor.execute("""
+                INSERT INTO save_qus_type3 (Question, option1, option2, option3, option4, Correct_Option)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (question, option_a, option_b, option_c, option_d, correct_option))
+        except mysql.connector.Error as e:
+            flash(f"Question {i+1} save nahi hua. Error: {str(e)}", "danger")
+
+    qus_db.commit()
+    flash("Questions save ho gaye!", "success")
+    return redirect(url_for('type3_html'))
+
+@app.route('/type4.html')
+def type4_html():
+    return render_template('type4.html')
+
+@app.route('/type4', methods=['POST'])
+def type4():
+    for i in range(10):
+        question = request.form.get(f'question_{i}') or None
+        option_a = request.form.get(f'option_a_{i}') or None
+        option_b = request.form.get(f'option_b_{i}') or None
+        option_c = request.form.get(f'option_c_{i}') or None
+        option_d = request.form.get(f'option_d_{i}') or None
+        correct_option = request.form.get(f'correct_option_{i}') or None
+
+        try:
+            qus_cursor.execute("""
+                INSERT INTO save_qus_type4 (Question, option1, option2, option3, option4, Correct_Option)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (question, option_a, option_b, option_c, option_d, correct_option))
+        except mysql.connector.Error as e:
+            flash(f"Question {i+1} save nahi hua. Error: {str(e)}", "danger")
+
+    qus_db.commit()
+    flash("Questions save ho gaye!", "success")
+    return redirect(url_for('type4_html'))
+
+@app.route('/type5.html')
+def type5_html():
+    return render_template('type5.html')
+
+@app.route('/type5', methods=['POST'])
+def type5():
+    for i in range(10):
+        question = request.form.get(f'question_{i}') or None
+        option_a = request.form.get(f'option_a_{i}') or None
+        option_b = request.form.get(f'option_b_{i}') or None
+        option_c = request.form.get(f'option_c_{i}') or None
+        option_d = request.form.get(f'option_d_{i}') or None
+        correct_option = request.form.get(f'correct_option_{i}') or None
+
+        try:
+            qus_cursor.execute("""
+                INSERT INTO save_qus_type5 (Question, option1, option2, option3, option4, Correct_Option)
+                VALUES (%s, %s, %s, %s, %s, %s)
+            """, (question, option_a, option_b, option_c, option_d, correct_option))
+        except mysql.connector.Error as e:
+            flash(f"Question {i+1} save nahi hua. Error: {str(e)}", "danger")
+
+    qus_db.commit()
+    flash("Questions save ho gaye!", "success")
+    return redirect(url_for('type5_html'))
+
 
 @app.route("/logout")
 def logout():
@@ -127,4 +257,4 @@ def logout():
     return redirect(url_for('log'))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5005)
+    app.run(debug=True, port=5007)
