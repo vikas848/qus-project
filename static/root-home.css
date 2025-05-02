@@ -1,34 +1,60 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
 
-.part1 {
-    position: fixed;
-    top: 0;
-    left: 0;
+body {
+    font-family: Arial, sans-serif;
     height: 100vh;
-    width: 160px;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar (part1) */
+.part1 {
+    width: 12.5%;
     background-color: rgb(214, 218, 226);
-    border-right: 1px solid rgb(192, 189, 189);
-    padding: 10px;
-    box-sizing: border-box;
+    border-right: 1px solid white;
+    padding: 20px;
 }
 
 .select {
     height: 35px;
     width: 100%;
     font-size: 16px;
-    margin-bottom: 10px;
 }
 
+/* Main content area (part2) */
 .part2 {
-    margin-left: 160px;
-    /* padding: 30px; */
+    width: 87.5%;
     background-color: rgb(192, 212, 250);
-    min-height: 100vh;
-    /* box-sizing: border-box; */
+    padding: 30px;
+    /* overflow-y: auto; */
+}
+
+/* Heading section */
+.h2-div {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 20px;
+    background-color: rgba(226, 43, 43, 0.507);
+}
+
+/* Optional image section */
+.img-div {
+    height: calc(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.root-home-img{
+    height: 500px;
 }

@@ -123,6 +123,10 @@ def type1():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type1_html'))
 
+@app.route('/type1-edit.html')
+def type1_edit_html():
+    return render_template('type1-edit.html')
+
 @app.route('/type2.html')
 def type2_html():
     return render_template('type2.html')
@@ -148,6 +152,10 @@ def type2():
     qus_db.commit()
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type2_html'))
+
+@app.route('/type2-edit.html')
+def type2_edit_html():
+    return render_template('type2-edit.html')
 
 @app.route('/type3.html')
 def type3_html():
@@ -175,6 +183,10 @@ def type3():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type3_html'))
 
+@app.route('/type3-edit.html')
+def type3_edit_html():
+    return render_template('type3-edit.html')
+
 @app.route('/type4.html')
 def type4_html():
     return render_template('type4.html')
@@ -201,6 +213,10 @@ def type4():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type4_html'))
 
+@app.route('/type4-edit.html')
+def type4_edit_html():
+    return render_template('type4-edit.html')
+
 @app.route('/type5.html')
 def type5_html():
     return render_template('type5.html')
@@ -226,6 +242,10 @@ def type5():
     qus_db.commit()
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type5_html'))
+
+@app.route('/type5-edit.html')
+def type5_edit_html():
+    return render_template('type5-edit.html')
 
 
 @app.route("/logout")
