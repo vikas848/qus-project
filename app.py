@@ -97,28 +97,6 @@ def root_login():
 def root_home_html():
     return render_template('root-home.html')
 
-@app.route('/root-home', methods=['POST'])
-def root_home():
-    for i in range(10):
-        question = request.form.get(f'question_{i}') or None
-        option_a = request.form.get(f'option_a_{i}') or None
-        option_b = request.form.get(f'option_b_{i}') or None
-        option_c = request.form.get(f'option_c_{i}') or None
-        option_d = request.form.get(f'option_d_{i}') or None
-        correct_option = request.form.get(f'correct_option_{i}') or None
-
-        try:
-            qus_cursor.execute("""
-                INSERT INTO save_qus_data (Question, option1, option2, option3, option4, Correct_Option)
-                VALUES (%s, %s, %s, %s, %s, %s)
-            """, (question, option_a, option_b, option_c, option_d, correct_option))
-        except mysql.connector.Error as e:
-            flash(f"Question {i+1} save nahi hua. Error: {str(e)}", "danger")
-
-    qus_db.commit()
-    flash("Questions save ho gaye!", "success")
-    return redirect(url_for('root_home'))
-
 @app.route('/type1.html')
 def type1_html():
     return render_template('type1.html')
@@ -257,4 +235,4 @@ def logout():
     return redirect(url_for('log'))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5007)
+    app.run(debug=True, port=5008)

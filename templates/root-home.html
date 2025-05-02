@@ -11,7 +11,7 @@
 <body>
     <div action="/root-home.html" method="POST" class="container">
         <div class="part1">
-            <label for="option">Select Option:</label>
+            <label for="option">Select Type:</label>
             <select name="option" id="option" class="select" onchange="handleRedirect(this.value)">
                 <option value="0">None</option>
                 <!-- <option value="root-home.html">None</option> -->
@@ -31,19 +31,8 @@
             }
         </script>
         <div class="part2">
-            <h2>Enter 10 Questions</h2>
-            <form method="POST" action="/root-home">
-                {% for i in range(10) %}
-                <h4>Question {{ i+1 }}</h4>
-                Question: <input type="Question" id="{{ i }}" name="question_{{ i }}" class="qus" placeholder=" Question..."><br>
-               <a>A: <input type="option1" name="option_a_{{ i }}" class="option1 option1234" placeholder=" option1..."></a>
-               <a>B: <input type="option2" name="option_b_{{ i }}" class="option2 option1234" placeholder=" option2..."></a><br>
-               <a>c: <input type="option3" name="option_c_{{ i }}" class="option3 option1234" placeholder=" option3..."></a>
-               <a>d: <input type="option4" name="option_d_{{ i }}" class="option4 option1234" placeholder=" option4..."></a><br>
-                Correct Option (A/B/C/D): <input type="Correct_Option" name="correct_option_{{ i }}" class="correct_option option1234" placeholder="select correct option..."><br><br>
-                {% endfor %}
-                <button type="submit" class="sub_btn">Save Questions</button>
-            </form>
+            <h2>Select Questions Type</h2>
+            <!-- <img src="{{ url_for('static', filename='img/root-home.jpg') }}" alt="" class="root-home-img"> -->
         </div>
     </div>
 </body>

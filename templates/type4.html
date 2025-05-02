@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>root_Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='root-home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='types.css') }}">
 </head>
 
 <body>
@@ -14,10 +14,10 @@
             <label for="option">Select Option:</label>
             <select name="option" id="option" class="select" onchange="handleRedirect(this.value)">
                 <option value="0">Option 4</option>
-                <option value="root-home.html">None</option>
                 <option value="type1.html">Option 1</option>
                 <option value="type2.html">Option 2</option>
                 <option value="type3.html">Option 3</option>
+                <option value="root-home.html">None</option>
                 <!-- <option value="type4.html">Option 4</option> -->
                 <option value="type5.html">Option 5</option>
             </select>
