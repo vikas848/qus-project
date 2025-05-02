@@ -7,14 +7,13 @@ MariaDB [qus_data]> show tables;
 | Tables_in_qus_data |
 +--------------------+
 | qus_data_table     |
-| save_qus_data      |
 | save_qus_type1     |
 | save_qus_type2     |
 | save_qus_type3     |
 | save_qus_type4     |
 | save_qus_type5     |
 +--------------------+
-7 rows in set (0.001 sec)
+6 rows in set (0.001 sec)
 
 MariaDB [qus_data]> 
 
