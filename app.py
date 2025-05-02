@@ -247,7 +247,6 @@ def type5():
 def type5_edit_html():
     return render_template('type5-edit.html')
 
-
 @app.route("/logout")
 def logout():
     session.pop('email', None)
