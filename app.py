@@ -125,7 +125,15 @@ def type1():
 
 @app.route('/type1-edit.html')
 def type1_edit_html():
-    return render_template('type1-edit.html')
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type1")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('type1-edit.html', questions=questions)
+
 
 @app.route('/type2.html')
 def type2_html():
@@ -155,7 +163,14 @@ def type2():
 
 @app.route('/type2-edit.html')
 def type2_edit_html():
-    return render_template('type2-edit.html')
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type2")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('type2-edit.html', questions=questions)
 
 @app.route('/type3.html')
 def type3_html():
@@ -185,7 +200,14 @@ def type3():
 
 @app.route('/type3-edit.html')
 def type3_edit_html():
-    return render_template('type3-edit.html')
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type3")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('type3-edit.html', questions=questions)
 
 @app.route('/type4.html')
 def type4_html():
@@ -215,7 +237,14 @@ def type4():
 
 @app.route('/type4-edit.html')
 def type4_edit_html():
-    return render_template('type4-edit.html')
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type4")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('type4-edit.html', questions=questions)
 
 @app.route('/type5.html')
 def type5_html():
@@ -245,7 +274,14 @@ def type5():
 
 @app.route('/type5-edit.html')
 def type5_edit_html():
-    return render_template('type5-edit.html')
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type5")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('type5-edit.html', questions=questions)
 
 @app.route("/logout")
 def logout():
@@ -254,4 +290,4 @@ def logout():
     return redirect(url_for('log'))
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5004)
+    app.run(debug=True, port=5005)
