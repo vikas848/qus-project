@@ -14,25 +14,27 @@
         <form method="POST" action="/type2-update">
             {% if questions %}
             {% for q in questions %}
-            <h4>Question {{ q[0] }}</h4>
-            Question: <input type="Question" id="{{ i }}" name="question_{{ i }}" class="qus" placeholder=" Question..."
-                value="{{ q[1] }}"><br>
-            <a>A: <input type="option1" name="option_a_{{ i }}" class="option1 option1234" placeholder=" option1..."
-                    value="{{ q[2] }}"></a>
-            <a>B: <input type="option2" name="option_b_{{ i }}" class="option2 option1234" placeholder=" option2..."
-                    value="{{ q[3] }}"></a><br>
-            <a>c: <input type="option3" name="option_c_{{ i }}" class="option3 option1234" placeholder=" option3..."
-                    value="{{ q[4] }}"></a>
-            <a>d: <input type="option4" name="option_d_{{ i }}" class="option4 option1234" placeholder=" option4..."
-                    value="{{ q[5] }}"></a><br>
-            Correct Option (A/B/C/D): <input type="Correct_Option" name="correct_option_{{ i }}"
-                class="correct_option option1234" placeholder="select correct option..." value="{{ q[6] }}"><br><br>
+            <h4>Question {{ loop.index }}</h4>
+
+            <input type="hidden" name="sr_{{ loop.index0 }}" value="{{ q[0] }}">
+
+            Question:<input type="text" name="question_{{ loop.index0 }}" class="qus" placeholder="Question..."value="{{ q[1] }}"><br>
+
+            A:<input type="text" name="option_a_{{ loop.index0 }}" class="option1 option1234" placeholder="option A..." value="{{ q[2] }}">
+
+            B:<input type="text" name="option_b_{{ loop.index0 }}" class="option2 option1234" placeholder="option B..." value="{{ q[3] }}"><br>
+
+            C:<input type="text" name="option_c_{{ loop.index0 }}" class="option3 option1234" placeholder="option C..." value="{{ q[4] }}">
+
+            D:<input type="text" name="option_d_{{ loop.index0 }}" class="option4 option1234" placeholder="option D..." value="{{ q[5] }}"><br>
+
+            Correct Option (A/B/C/D):<input type="text" name="correct_option_{{ loop.index0 }}" class="correct_option option1234" placeholder="Correct option..." value="{{ q[6] }}"><br><br>
             {% endfor %}
+            <button type="submit" class="sub_btn">Update Questions</button>
             {% else %}
             <p>No questions found.</p>
             {% endif %}
         </form>
-        <button type="submit" class="sub_btn">Update Questions</button>
     </div>
 </body>
 

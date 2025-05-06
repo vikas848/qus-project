@@ -134,6 +134,34 @@ def type1_edit_html():
 
     return render_template('type1-edit.html', questions=questions)
 
+@app.route('/type1-update', methods=['POST'])
+def type1_update():
+    try:
+        for i in range(10):
+            sr = request.form.get(f'sr_{i}')
+            question = request.form.get(f'question_{i}') or None
+            option_a = request.form.get(f'option_a_{i}') or None
+            option_b = request.form.get(f'option_b_{i}') or None
+            option_c = request.form.get(f'option_c_{i}') or None
+            option_d = request.form.get(f'option_d_{i}') or None
+            correct_option = request.form.get(f'correct_option_{i}') or None
+
+            if sr:
+                qus_cursor.execute("""
+                    UPDATE save_qus_type1
+                    SET Question=%s, option1=%s, option2=%s, option3=%s, option4=%s, Correct_Option=%s
+                    WHERE sr=%s
+                """, (question, option_a, option_b, option_c, option_d, correct_option, sr))
+
+        qus_db.commit()
+        flash("Questions updated successfully!", "success")
+
+    except mysql.connector.Error as e:
+        flash(f"Error updating questions: {str(e)}", "danger")
+
+    return redirect(url_for('type1_html'))  # or your correct redirect page
+
+
 
 @app.route('/type2.html')
 def type2_html():
@@ -172,6 +200,34 @@ def type2_edit_html():
 
     return render_template('type2-edit.html', questions=questions)
 
+@app.route('/type2-update', methods=['POST'])
+def type2_update():
+    try:
+        for i in range(10):
+            sr = request.form.get(f'sr_{i}')
+            question = request.form.get(f'question_{i}') or None
+            option_a = request.form.get(f'option_a_{i}') or None
+            option_b = request.form.get(f'option_b_{i}') or None
+            option_c = request.form.get(f'option_c_{i}') or None
+            option_d = request.form.get(f'option_d_{i}') or None
+            correct_option = request.form.get(f'correct_option_{i}') or None
+
+            if sr:
+                qus_cursor.execute("""
+                    UPDATE save_qus_type2
+                    SET Question=%s, option1=%s, option2=%s, option3=%s, option4=%s, Correct_Option=%s
+                    WHERE sr=%s
+                """, (question, option_a, option_b, option_c, option_d, correct_option, sr))
+
+        qus_db.commit()
+        flash("Questions updated successfully!", "success")
+
+    except mysql.connector.Error as e:
+        flash(f"Error updating questions: {str(e)}", "danger")
+
+    return redirect(url_for('type2_html'))  # or your correct redirect page
+
+
 @app.route('/type3.html')
 def type3_html():
     return render_template('type3.html')
@@ -208,6 +264,33 @@ def type3_edit_html():
         questions = []
 
     return render_template('type3-edit.html', questions=questions)
+
+@app.route('/type3-update', methods=['POST'])
+def type3_update():
+    try:
+        for i in range(10):
+            sr = request.form.get(f'sr_{i}')
+            question = request.form.get(f'question_{i}') or None
+            option_a = request.form.get(f'option_a_{i}') or None
+            option_b = request.form.get(f'option_b_{i}') or None
+            option_c = request.form.get(f'option_c_{i}') or None
+            option_d = request.form.get(f'option_d_{i}') or None
+            correct_option = request.form.get(f'correct_option_{i}') or None
+
+            if sr:
+                qus_cursor.execute("""
+                    UPDATE save_qus_type3
+                    SET Question=%s, option1=%s, option2=%s, option3=%s, option4=%s, Correct_Option=%s
+                    WHERE sr=%s
+                """, (question, option_a, option_b, option_c, option_d, correct_option, sr))
+
+        qus_db.commit()
+        flash("Questions updated successfully!", "success")
+
+    except mysql.connector.Error as e:
+        flash(f"Error updating questions: {str(e)}", "danger")
+
+    return redirect(url_for('type3_html'))
 
 @app.route('/type4.html')
 def type4_html():
@@ -246,6 +329,33 @@ def type4_edit_html():
 
     return render_template('type4-edit.html', questions=questions)
 
+@app.route('/type4-update', methods=['POST'])
+def type4_update():
+    try:
+        for i in range(10):
+            sr = request.form.get(f'sr_{i}')
+            question = request.form.get(f'question_{i}') or None
+            option_a = request.form.get(f'option_a_{i}') or None
+            option_b = request.form.get(f'option_b_{i}') or None
+            option_c = request.form.get(f'option_c_{i}') or None
+            option_d = request.form.get(f'option_d_{i}') or None
+            correct_option = request.form.get(f'correct_option_{i}') or None
+
+            if sr:
+                qus_cursor.execute("""
+                    UPDATE save_qus_type4
+                    SET Question=%s, option1=%s, option2=%s, option3=%s, option4=%s, Correct_Option=%s
+                    WHERE sr=%s
+                """, (question, option_a, option_b, option_c, option_d, correct_option, sr))
+
+        qus_db.commit()
+        flash("Questions updated successfully!", "success")
+
+    except mysql.connector.Error as e:
+        flash(f"Error updating questions: {str(e)}", "danger")
+
+    return redirect(url_for('type4_html'))
+
 @app.route('/type5.html')
 def type5_html():
     return render_template('type5.html')
@@ -282,6 +392,33 @@ def type5_edit_html():
         questions = []
 
     return render_template('type5-edit.html', questions=questions)
+
+@app.route('/type5-update', methods=['POST'])
+def type5_update():
+    try:
+        for i in range(10):
+            sr = request.form.get(f'sr_{i}')
+            question = request.form.get(f'question_{i}') or None
+            option_a = request.form.get(f'option_a_{i}') or None
+            option_b = request.form.get(f'option_b_{i}') or None
+            option_c = request.form.get(f'option_c_{i}') or None
+            option_d = request.form.get(f'option_d_{i}') or None
+            correct_option = request.form.get(f'correct_option_{i}') or None
+
+            if sr:
+                qus_cursor.execute("""
+                    UPDATE save_qus_type5
+                    SET Question=%s, option1=%s, option2=%s, option3=%s, option4=%s, Correct_Option=%s
+                    WHERE sr=%s
+                """, (question, option_a, option_b, option_c, option_d, correct_option, sr))
+
+        qus_db.commit()
+        flash("Questions updated successfully!", "success")
+
+    except mysql.connector.Error as e:
+        flash(f"Error updating questions: {str(e)}", "danger")
+
+    return redirect(url_for('type5_html'))
 
 @app.route("/logout")
 def logout():
