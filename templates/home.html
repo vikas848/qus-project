@@ -4,11 +4,39 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Home</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='non-root-login.css') }}">
+   <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 </head>
 <body>
-    <form action="/home" method="POST">
-     <h1>vikas</h1>
-    </form>
+        <div action="/home" method="POST" class="container">
+            <div class="part1">
+                <label for="option">Select Type:</label>
+                <select name="option" id="option" class="select" onchange="handleRedirect(this.value)">
+                    <option value="0">None</option>
+                    <option value="exam-type1.html">Option 1</option>
+                    <option value="exam-type2.html">Option 2</option>
+                    <option value="exam-type3.html">Option 3</option>
+                    <option value="exam-type4.html">Option 4</option>
+                    <option value="exam-type5.html">Option 5</option>
+                </select>
+            </div>
+    
+            <script>
+                function handleRedirect(value) {
+                    if (value !== "0") {
+                        window.location.href = value;
+                    }
+                }
+            </script>
+            <div class="part2">
+                <div class="h2-div">
+                    <h2>Select Questions Type</h2>
+                </div>
+                <div class="img-div">
+                    <div>
+                        <img src="{{ url_for('static', filename='img/home-root.png') }}" alt="" class="root-home-img">
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
