@@ -14,7 +14,7 @@
         <form method="POST" action="/type5-update">
             {% if questions %}
             {% for q in questions %}
-            <h4>Question {{ loop.index }}</h4>
+            <h3>Question {{ loop.index }}</h3>
 
             <input type="hidden" name="sr_{{ loop.index0 }}" value="{{ q[0] }}">
 

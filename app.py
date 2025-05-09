@@ -78,6 +78,17 @@ def login():
 def home():
    return render_template('home.html')
 
+@app.route('/exam-type1.html', methods=['GET'])
+def exam_type1_html():
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type1")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('exam-type1.html', questions=questions)
+
 @app.route('/root_login', methods=['GET', 'POST'])
 def root_login():
     if request.method == 'POST':
@@ -123,7 +134,7 @@ def type1():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type1_html'))
 
-@app.route('/type1-edit.html')
+@app.route('/type1-edit.html', methods=['GET'])
 def type1_edit_html():
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type1")
@@ -189,7 +200,7 @@ def type2():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type2_html'))
 
-@app.route('/type2-edit.html')
+@app.route('/type2-edit.html', methods=['GET'])
 def type2_edit_html():
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type2")
@@ -254,7 +265,7 @@ def type3():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type3_html'))
 
-@app.route('/type3-edit.html')
+@app.route('/type3-edit.html', methods=['GET'])
 def type3_edit_html():
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type3")
@@ -318,7 +329,7 @@ def type4():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type4_html'))
 
-@app.route('/type4-edit.html')
+@app.route('/type4-edit.html', methods=['GET'])
 def type4_edit_html():
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type4")
@@ -382,7 +393,7 @@ def type5():
     flash("Questions save ho gaye!", "success")
     return redirect(url_for('type5_html'))
 
-@app.route('/type5-edit.html')
+@app.route('/type5-edit.html', methods=['GET'])
 def type5_edit_html():
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type5")

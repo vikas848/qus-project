@@ -14,13 +14,13 @@
         <form method="POST" action="/type1-update">
             {% if questions %}
             {% for q in questions %}
-            <h4>Question {{ loop.index }}</h4>
+            <h3>Question {{ loop.index }}</h3>
 
             <input type="hidden" name="sr_{{ loop.index0 }}" value="{{ q[0] }}">
 
             Question:<input type="text" name="question_{{ loop.index0 }}" class="qus" placeholder="Question..."value="{{ q[1] }}"><br>
 
-            A:<input type="text" name="option_a_{{ loop.index0 }}" class="option1 option1234" placeholder="option A..." value="{{ q[2] }}">
+            <div class="options">A:<input type="text" name="option_a_{{ loop.index0 }}" class="option1 option1234" placeholder="option A..." value="{{ q[2] }}">
 
             B:<input type="text" name="option_b_{{ loop.index0 }}" class="option2 option1234" placeholder="option B..." value="{{ q[3] }}"><br>
 
@@ -28,7 +28,7 @@
 
             D:<input type="text" name="option_d_{{ loop.index0 }}" class="option4 option1234" placeholder="option D..." value="{{ q[5] }}"><br>
 
-            Correct Option (A/B/C/D):<input type="text" name="correct_option_{{ loop.index0 }}" class="correct_option option1234" placeholder="Correct option..." value="{{ q[6] }}"><br><br>
+            Correct Option (A/B/C/D):<input type="text" name="correct_option_{{ loop.index0 }}" class="correct_option option1234" placeholder="Correct option..." value="{{ q[6] }}"><br><br> </div>
             {% endfor %}
             <button type="submit" class="sub_btn">Update Questions</button>
             {% else %}

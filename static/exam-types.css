@@ -48,6 +48,10 @@ body {
     width: 70%;
     font-size: 19px;
     border-radius: 10px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 10px;
 }
 .option1234{
     height: 35px;
@@ -55,10 +59,13 @@ body {
     font-size: 18px;  
     border-radius: 30px;
     margin-top: 30px;
-    
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 20px;
 }
-a{
-    margin-left: 65px;
+.options{
+    margin-left: 100px;
 }
 .sub_btn{
     height: 40px;
