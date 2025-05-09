@@ -4,21 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exam Questions - Type 1</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='types.css') }}">
+    <title>Exam Questions - Type 4</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='exam-types.css') }}">
 </head>
 
 <body>
-    <div action="/exam-type1.html" method="POST" class="container">
+    <div action="/exam-type4.html" method="POST" class="container">
         <div class="part1">
             <label for="option">Select Type:</label>
             <select name="option" id="option" class="select" onchange="handleRedirect(this.value)">
-                <option value="0">option1</option>
-                <option value="home">None</option>
-                <!-- <option value="exam-type1.html">Option 1</option> -->
+                <option value="0">option 4</option>
+                <option value="exam-type1.html">Option 1</option>
                 <option value="exam-type2.html">Option 2</option>
                 <option value="exam-type3.html">Option 3</option>
-                <option value="exam-type4.html">Option 4</option>
+                <option value="home">None</option>
                 <option value="exam-type5.html">Option 5</option>
             </select>
         </div>
@@ -32,33 +31,27 @@
         </script>
 
         <div class="part2">
-            <h2>Exam Questions (Type 1)</h2>
-            <form method="POST" action="/type1-exam-qus">
+            <h2>Exam Questions (Type 4)</h2>
+            <form method="POST" action="/type4-exam-qus">
                 {% if questions %}
                 {% for q in questions %}
-                <h4>Question {{ loop.index }}</h4>
-
+                <h3>Question {{ loop.index }}</h3>
+    
                 <input type="hidden" name="sr_{{ loop.index0 }}" value="{{ q[0] }}">
-
-                Question:<input type="text" name="question_{{ loop.index0 }}" class="qus" placeholder="Question..."
-                    value="{{ q[1] }}"><br>
-
-                A:<input type="text" name="option_a_{{ loop.index0 }}" class="option1 option1234"
-                    placeholder="option A..." value="{{ q[2] }}">
-
-                B:<input type="text" name="option_b_{{ loop.index0 }}" class="option2 option1234"
-                    placeholder="option B..." value="{{ q[3] }}"><br>
-
-                C:<input type="text" name="option_c_{{ loop.index0 }}" class="option3 option1234"
-                    placeholder="option C..." value="{{ q[4] }}">
-
-                D:<input type="text" name="option_d_{{ loop.index0 }}" class="option4 option1234"
-                    placeholder="option D..." value="{{ q[5] }}"><br>
-
-                Correct Option (A/B/C/D):<input type="text" name="correct_option_{{ loop.index0 }}"
-                    class="correct_option option1234" placeholder="Correct option..." value="{{ q[6] }}"><br><br>
+    
+                Question:<input type="text" disabled name="question_{{ loop.index0 }}" class="qus" placeholder="Question..."value="{{ q[1] }}"><br>
+    
+               <div class="options">A:<input type="text" disabled name="option_a_{{ loop.index0 }}" class="option1 option1234" placeholder="option A..." value="{{ q[2] }}">
+    
+                B:<input type="text" disabled name="option_b_{{ loop.index0 }}" class="option2 option1234" placeholder="option B..." value="{{ q[3] }}"><br>
+    
+                C:<input type="text" disabled name="option_c_{{ loop.index0 }}" class="option3 option1234" placeholder="option C..." value="{{ q[4] }}">
+    
+                D:<input type="text" disabled name="option_d_{{ loop.index0 }}" class="option4 option1234" placeholder="option D..." value="{{ q[5] }}"><br>
+    
+                Correct Option (A/B/C/D):<input type="text" name="correct_option_{{ loop.index0 }}" class="correct_option option1234" placeholder="Correct option..." value="{{ q[6] }}"><br><br> </div>
                 {% endfor %}
-                <button type="submit" class="sub_btn">Update Questions</button>
+                <button type="submit" class="sub_btn">Exam Submit</button>
                 {% else %}
                 <p>No questions found.</p>
                 {% endif %}

@@ -89,6 +89,50 @@ def exam_type1_html():
 
     return render_template('exam-type1.html', questions=questions)
 
+@app.route('/exam-type2.html', methods=['GET'])
+def exam_type2_html():
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type2")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('exam-type2.html', questions=questions)
+
+@app.route('/exam-type3.html', methods=['GET'])
+def exam_type3_html():
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type3")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('exam-type3.html', questions=questions)
+
+@app.route('/exam-type4.html', methods=['GET'])
+def exam_type4_html():
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type4")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('exam-type4.html', questions=questions)
+
+@app.route('/exam-type5.html', methods=['GET'])
+def exam_type5_html():
+    try:
+        qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type5")
+        questions = qus_cursor.fetchall()
+    except mysql.connector.Error as e:
+        flash(f"Data load nahi ho paya. Error: {str(e)}", "danger")
+        questions = []
+
+    return render_template('exam-type5.html', questions=questions)
+
 @app.route('/root_login', methods=['GET', 'POST'])
 def root_login():
     if request.method == 'POST':
