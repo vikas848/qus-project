@@ -48,6 +48,7 @@ body {
     width: 70%;
     font-size: 19px;
     border-radius: 10px;
+    padding-left: 20px;
 }
 .option1234{
     height: 35px;
@@ -55,7 +56,7 @@ body {
     font-size: 18px;  
     border-radius: 30px;
     margin-top: 30px;
-    
+    padding-left: 20px;
 }
 a{
     margin-left: 65px;

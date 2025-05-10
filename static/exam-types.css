@@ -30,19 +30,6 @@ body {
     min-height: 100vh;
     box-sizing: border-box;
 }
-.qus-edit-btn{
-    margin-left: 80%;
-    width: 20%;
-    height: 45px;
-    background:rgba(226, 43, 43, 0.507);
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(2, 2, 2, 0.452);
-    border: none;
-    cursor: pointer;
-    font-size: 17px;
-    color: #424242;
-    font-weight: 600;
-}
 .qus{
     height: 40px;
     width: 70%;

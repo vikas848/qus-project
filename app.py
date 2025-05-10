@@ -89,6 +89,38 @@ def exam_type1_html():
 
     return render_template('exam-type1.html', questions=questions)
 
+from flask import request, render_template
+
+@app.route('/type1-exam-qus', methods=['POST', 'GET'])
+def type1_exam_qus(): 
+    all_correct_options = []
+    for i in range(10):
+        option = request.form.get(f'correct_option_{i}') or None
+        all_correct_options.append(option)
+
+    qus_cursor.execute("SELECT Correct_Option FROM save_qus_type1")
+    fetched_correct_options = qus_cursor.fetchall() 
+
+    Correct_Question = 0
+    Wrong_Question = 0
+    Not_Attempt_Question = 0
+    for i in range(10):
+        if all_correct_options[i] is not None:
+            submitted = all_correct_options[i].strip().lower()
+            correct = fetched_correct_options[i][0].strip().lower()
+            if submitted == correct:
+                Correct_Question += 1 
+            else:
+                Wrong_Question += 1 
+        else:
+            correct == None
+            Not_Attempt_Question +=1
+
+
+    return render_template("exam-result-type1.html", marks=Correct_Question, Wrong=Wrong_Question,Not_Attempt=Not_Attempt_Question)
+
+
+
 @app.route('/exam-type2.html', methods=['GET'])
 def exam_type2_html():
     try:

@@ -1,6 +1,6 @@
 # qus-project
 
-qus_data  name ke andar jitni tables ka use kiya gya h  -------------
+qus_data  name ke databse me jitni tables ka use kiya gya h  -------------
 
 MariaDB [qus_data]> show tables;
 +--------------------+
