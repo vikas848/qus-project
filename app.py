@@ -112,8 +112,8 @@ def type1_exam_qus():
                 Correct_Question += 1 
             else:
                 Wrong_Question += 1 
+        
         else:
-            correct == None
             Not_Attempt_Question +=1
 
 
