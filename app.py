@@ -120,7 +120,6 @@ def type1_exam_qus():
     return render_template("exam-result-type1.html", marks=Correct_Question, Wrong=Wrong_Question,Not_Attempt=Not_Attempt_Question)
 
 
-
 @app.route('/exam-type2.html', methods=['GET'])
 def exam_type2_html():
     try:
@@ -131,6 +130,35 @@ def exam_type2_html():
         questions = []
 
     return render_template('exam-type2.html', questions=questions)
+
+@app.route('/type2-exam-qus', methods=['POST', 'GET'])
+def type2_exam_qus(): 
+    all_correct_options = []
+    for i in range(10):
+        option = request.form.get(f'correct_option_{i}') or None
+        all_correct_options.append(option)
+
+    qus_cursor.execute("SELECT Correct_Option FROM save_qus_type2")
+    fetched_correct_options = qus_cursor.fetchall() 
+
+    Correct_Question = 0
+    Wrong_Question = 0
+    Not_Attempt_Question = 0
+    for i in range(10):
+        if all_correct_options[i] is not None:
+            submitted = all_correct_options[i].strip().lower()
+            correct = fetched_correct_options[i][0].strip().lower()
+            if submitted == correct:
+                Correct_Question += 1 
+            else:
+                Wrong_Question += 1 
+        
+        else:
+            Not_Attempt_Question +=1
+
+
+    return render_template("exam-result-type2.html", marks=Correct_Question, Wrong=Wrong_Question,Not_Attempt=Not_Attempt_Question)
+
 
 @app.route('/exam-type3.html', methods=['GET'])
 def exam_type3_html():
@@ -143,6 +171,35 @@ def exam_type3_html():
 
     return render_template('exam-type3.html', questions=questions)
 
+@app.route('/type3-exam-qus', methods=['POST', 'GET'])
+def type3_exam_qus(): 
+    all_correct_options = []
+    for i in range(10):
+        option = request.form.get(f'correct_option_{i}') or None
+        all_correct_options.append(option)
+
+    qus_cursor.execute("SELECT Correct_Option FROM save_qus_type3")
+    fetched_correct_options = qus_cursor.fetchall() 
+
+    Correct_Question = 0
+    Wrong_Question = 0
+    Not_Attempt_Question = 0
+    for i in range(10):
+        if all_correct_options[i] is not None:
+            submitted = all_correct_options[i].strip().lower()
+            correct = fetched_correct_options[i][0].strip().lower()
+            if submitted == correct:
+                Correct_Question += 1 
+            else:
+                Wrong_Question += 1 
+        
+        else:
+            Not_Attempt_Question +=1
+
+
+    return render_template("exam-result-type3.html", marks=Correct_Question, Wrong=Wrong_Question,Not_Attempt=Not_Attempt_Question)
+
+
 @app.route('/exam-type4.html', methods=['GET'])
 def exam_type4_html():
     try:
@@ -154,6 +211,35 @@ def exam_type4_html():
 
     return render_template('exam-type4.html', questions=questions)
 
+@app.route('/type4-exam-qus', methods=['POST', 'GET'])
+def type4_exam_qus(): 
+    all_correct_options = []
+    for i in range(10):
+        option = request.form.get(f'correct_option_{i}') or None
+        all_correct_options.append(option)
+
+    qus_cursor.execute("SELECT Correct_Option FROM save_qus_type4")
+    fetched_correct_options = qus_cursor.fetchall() 
+
+    Correct_Question = 0
+    Wrong_Question = 0
+    Not_Attempt_Question = 0
+    for i in range(10):
+        if all_correct_options[i] is not None:
+            submitted = all_correct_options[i].strip().lower()
+            correct = fetched_correct_options[i][0].strip().lower()
+            if submitted == correct:
+                Correct_Question += 1 
+            else:
+                Wrong_Question += 1 
+        
+        else:
+            Not_Attempt_Question +=1
+
+
+    return render_template("exam-result-type4.html", marks=Correct_Question, Wrong=Wrong_Question,Not_Attempt=Not_Attempt_Question)
+
+
 @app.route('/exam-type5.html', methods=['GET'])
 def exam_type5_html():
     try:
@@ -164,6 +250,35 @@ def exam_type5_html():
         questions = []
 
     return render_template('exam-type5.html', questions=questions)
+
+@app.route('/type5-exam-qus', methods=['POST', 'GET'])
+def type5_exam_qus(): 
+    all_correct_options = []
+    for i in range(10):
+        option = request.form.get(f'correct_option_{i}') or None
+        all_correct_options.append(option)
+
+    qus_cursor.execute("SELECT Correct_Option FROM save_qus_type5")
+    fetched_correct_options = qus_cursor.fetchall() 
+
+    Correct_Question = 0
+    Wrong_Question = 0
+    Not_Attempt_Question = 0
+    for i in range(10):
+        if all_correct_options[i] is not None:
+            submitted = all_correct_options[i].strip().lower()
+            correct = fetched_correct_options[i][0].strip().lower()
+            if submitted == correct:
+                Correct_Question += 1 
+            else:
+                Wrong_Question += 1 
+        
+        else:
+            Not_Attempt_Question +=1
+
+
+    return render_template("exam-result-type5.html", marks=Correct_Question, Wrong=Wrong_Question,Not_Attempt=Not_Attempt_Question)
+
 
 @app.route('/root_login', methods=['GET', 'POST'])
 def root_login():
