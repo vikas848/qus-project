@@ -13,7 +13,7 @@ body {
     background-color: #e0f7fa; 
 }
 .result {
-    background-color: rgba(0, 255, 255, 0.9);
+     background-color: rgb(192, 212, 250);
     height: 100%;
     width: 70%;
     border-radius: 10px;
@@ -32,7 +32,7 @@ th, td {
     border: 1px solid #333;
 }
 th {
-    background-color: #0288d1;
+    background-color: #3bafeead;
     color: white;
     font-size: 18px;
 }

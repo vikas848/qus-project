@@ -8,9 +8,36 @@
 </head>
 <body>
     <div action="/exam-result-type4.html" class="container">
-        <h3>Correct Question: {{ marks}}</h3>
-        <h3>Wrong Question: {{ Wrong}}</h3>
-        <h3>Not Attempt Question: {{ Not_Attempt}}</h3>
+        <div class="result">
+            <h1>Your Result</h1>
+            <table>
+                <tr>
+                    <th>Sr</th>
+                    <th>Question no.</th>
+                    <th>Score</th>
+                </tr>
+                {% for i in range(10) %}
+                <tr>
+                    <td>{{ i + 1 }}</td>
+                    <td>Question No.{{ i + 1 }}</td>
+                    <td>{{ qus1_marks[i]}}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <th>Not Attempt Question</th>
+                    <th>Wrong Question.</th>
+                    <th>Total Marks</th>
+                </tr>
+                <tr>
+                    <td>{{ Not_Attempt }}</td>
+                    <td>{{ Wrong }}</td>
+                    <td>{{ marks }}</td>
+                </tr>
+            </table>
+            <!-- <h3>Correct Question: {{ marks }}</h3>
+            <h3>Wrong Question: {{ Wrong }}</h3>
+            <h3>Not Attempt Question: {{ Not_Attempt }}</h3> -->
+        </div>
     </div>
 </body>
 </html>
