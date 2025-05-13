@@ -26,7 +26,7 @@ Query OK, 0 rows affected (0.015 sec)
 MariaDB [qus_data]> 
 
 <h1>registion page</h1>
-<img src="static/img/registion page.png">
+<img src="static/img/register page.png">
 
 <h1>login page</h1>
 <img src="static/img/login page.png">
