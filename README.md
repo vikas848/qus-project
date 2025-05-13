@@ -25,6 +25,23 @@ MariaDB [qus_data]> create table save_qus_type2( sr int not null auto_increment,
 Query OK, 0 rows affected (0.015 sec)
 MariaDB [qus_data]> 
 
+<h1>registion page</h1>
+<img src="static/img/registion page.png">
+
 <h1>login page</h1>
-using html,css,flask,mysql
 <img src="static/img/login page.png">
+
+<h1>home page</h1>
+<img src="static/img/home page.png">
+
+<h1>exam question insert page</h1>
+<img src="static/img/question page.png">
+
+<h1>exam question update page</h1>
+<img src="static/img/question update page.png">
+
+<h1>exam page</h1>
+<img src="static/img/exam page.png">
+
+<h1>exam result page</h1>
+<img src="static/img/result page.png">
