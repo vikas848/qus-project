@@ -24,3 +24,7 @@ create tables -----------
 MariaDB [qus_data]> create table save_qus_type2( sr int not null auto_increment, Question char(255), option1 char(255), option2 char(255), option3 char(255), option4 char(255), Correct_Option char(255), primary key(sr));
 Query OK, 0 rows affected (0.015 sec)
 MariaDB [qus_data]> 
+
+<h1>login page</h1>
+using html,css,flask,mysql
+<img src="static/img/login page.png">
