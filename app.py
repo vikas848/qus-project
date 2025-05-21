@@ -65,7 +65,7 @@ def login():
         if user:
             stored_password = user[2]
             if check_password_hash(stored_password, password):
-                session['email'] = email
+                session['email'] = True 
                 return redirect(url_for('home'))
             else:
                 flash("Invalid password.", "danger")
@@ -76,10 +76,14 @@ def login():
 
 @app.route("/home")
 def home():
+   if not session.get('email'):
+        return redirect(url_for('login'))
    return render_template('home.html')
 
 @app.route('/exam-type1.html', methods=['GET'])
 def exam_type1_html():
+    if not session.get('email'):
+        return redirect(url_for('login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type1")
         questions = qus_cursor.fetchall()
@@ -93,6 +97,8 @@ from flask import request, render_template
 
 @app.route('/type1-exam-qus', methods=['POST', 'GET'])
 def type1_exam_qus(): 
+    if not session.get('email'):
+        return redirect(url_for('login'))
     all_correct_options = []
     for i in range(10):
         option = request.form.get(f'correct_option_{i}') or None
@@ -134,6 +140,8 @@ def type1_exam_qus():
 
 @app.route('/exam-type2.html', methods=['GET'])
 def exam_type2_html():
+    if not session.get('email'):
+        return redirect(url_for('login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type2")
         questions = qus_cursor.fetchall()
@@ -145,6 +153,8 @@ def exam_type2_html():
 
 @app.route('/type2-exam-qus', methods=['POST', 'GET'])
 def type2_exam_qus(): 
+    if not session.get('email'):
+        return redirect(url_for('login'))
     all_correct_options = []
     for i in range(10):
         option = request.form.get(f'correct_option_{i}') or None
@@ -185,6 +195,8 @@ def type2_exam_qus():
 
 @app.route('/exam-type3.html', methods=['GET'])
 def exam_type3_html():
+    if not session.get('email'):
+        return redirect(url_for('login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type3")
         questions = qus_cursor.fetchall()
@@ -196,6 +208,8 @@ def exam_type3_html():
 
 @app.route('/type3-exam-qus', methods=['POST', 'GET'])
 def type3_exam_qus(): 
+    if not session.get('email'):
+        return redirect(url_for('login'))
     all_correct_options = []
     for i in range(10):
         option = request.form.get(f'correct_option_{i}') or None
@@ -236,6 +250,8 @@ def type3_exam_qus():
 
 @app.route('/exam-type4.html', methods=['GET'])
 def exam_type4_html():
+    if not session.get('email'):
+        return redirect(url_for('login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type4")
         questions = qus_cursor.fetchall()
@@ -247,6 +263,8 @@ def exam_type4_html():
 
 @app.route('/type4-exam-qus', methods=['POST', 'GET'])
 def type4_exam_qus(): 
+    if not session.get('email'):
+        return redirect(url_for('login'))
     all_correct_options = []
     for i in range(10):
         option = request.form.get(f'correct_option_{i}') or None
@@ -287,6 +305,8 @@ def type4_exam_qus():
 
 @app.route('/exam-type5.html', methods=['GET'])
 def exam_type5_html():
+    if not session.get('email'):
+        return redirect(url_for('login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4 FROM save_qus_type5")
         questions = qus_cursor.fetchall()
@@ -298,6 +318,8 @@ def exam_type5_html():
 
 @app.route('/type5-exam-qus', methods=['POST', 'GET'])
 def type5_exam_qus(): 
+    if not session.get('email'):
+        return redirect(url_for('login'))
     all_correct_options = []
     for i in range(10):
         option = request.form.get(f'correct_option_{i}') or None
@@ -343,7 +365,7 @@ def root_login():
         password = request.form.get('password')
 
         if email == '6391782926vs@gmail.com' and password == '9569':
-            session['user'] = email 
+            session['email2'] = email 
             return redirect(url_for('root_home_html'))
         else:
             error = "Invalid username or password"
@@ -353,10 +375,14 @@ def root_login():
 
 @app.route('/root-home.html')
 def root_home_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     return render_template('root-home.html')
 
 @app.route('/type1.html')
 def type1_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     return render_template('type1.html')
 
 @app.route('/type1', methods=['POST'])
@@ -394,6 +420,8 @@ def type1_edit_html():
 
 @app.route('/type1-update', methods=['POST'])
 def type1_update():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     try:
         for i in range(10):
             sr = request.form.get(f'sr_{i}')
@@ -423,6 +451,8 @@ def type1_update():
 
 @app.route('/type2.html')
 def type2_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     return render_template('type2.html')
 
 @app.route('/type2', methods=['POST'])
@@ -449,6 +479,8 @@ def type2():
 
 @app.route('/type2-edit.html', methods=['GET'])
 def type2_edit_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type2")
         questions = qus_cursor.fetchall()
@@ -488,6 +520,8 @@ def type2_update():
 
 @app.route('/type3.html')
 def type3_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     return render_template('type3.html')
 
 @app.route('/type3', methods=['POST'])
@@ -514,6 +548,8 @@ def type3():
 
 @app.route('/type3-edit.html', methods=['GET'])
 def type3_edit_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type3")
         questions = qus_cursor.fetchall()
@@ -552,6 +588,8 @@ def type3_update():
 
 @app.route('/type4.html')
 def type4_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     return render_template('type4.html')
 
 @app.route('/type4', methods=['POST'])
@@ -578,6 +616,8 @@ def type4():
 
 @app.route('/type4-edit.html', methods=['GET'])
 def type4_edit_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type4")
         questions = qus_cursor.fetchall()
@@ -616,6 +656,8 @@ def type4_update():
 
 @app.route('/type5.html')
 def type5_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     return render_template('type5.html')
 
 @app.route('/type5', methods=['POST'])
@@ -642,6 +684,8 @@ def type5():
 
 @app.route('/type5-edit.html', methods=['GET'])
 def type5_edit_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type5")
         questions = qus_cursor.fetchall()
