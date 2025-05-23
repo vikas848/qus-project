@@ -19,24 +19,24 @@
                 <form action="{{ url_for('login') }}">
                     <button type="submit" class="root-btn">Login</button>
                 </form>
-
-                <form action="/register" method="POST">
-                    <h1>registration</h1>
-                    <div class="input-box">
-                        <input type="text" name="username" placeholder="username" required>
-                        <i class='bx bxs-user'></i>
-                    </div>
-                    <div class="input-box">
-                        <input type="email" name="email" placeholder="email" required>
-                        <i class='bx bxs-user'></i>
-                    </div>
-                    <div class="input-box">
-                        <input type="password" name="password" placeholder="password" required>
-                        <i class='bx bxs-lock'></i>
-                    </div>
-                    <button type="submit" class="btn">register</button>
-                </form>
-
+                <div class="login-form">
+                    <form action="/register" method="POST">
+                        <h1>registration</h1>
+                        <div class="input-box">
+                            <input type="text" name="username" placeholder="username" required>
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="email" name="email" placeholder="email" required>
+                            <i class='bx bxs-user'></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="password" name="password" placeholder="password" required>
+                            <i class='bx bxs-lock'></i>
+                        </div>
+                        <button type="submit" class="btn">register</button>
+                    </form>
+                </div>
                 <div class="singin">
                     <p>or login with social platfroms</p>
                     <div class="social-icons">
@@ -48,6 +48,7 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>

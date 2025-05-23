@@ -21,9 +21,9 @@ body {
     width: 12.5%;
     background-color: rgb(214, 218, 226);
     border-right: 1px solid white;
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 10px;
 }
-
 .select {
     height: 35px;
     width: 100%;
@@ -57,4 +57,99 @@ body {
 }
 .root-home-img{
     height: 500px;
+}
+@media screen and (max-width:913px) {
+    .part1 {
+        width: 19%;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid white;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width:850px) {
+    .part1 {
+        width: 16%;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid white;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width:850px) {
+    .part1 {
+        width: 20%;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid white;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+    .part2 {
+        width: 80%;
+        background-color: rgb(192, 212, 250);
+        padding: 30px;
+        /* overflow-y: auto; */
+    }
+}
+@media screen and (max-width:625px) {
+    .part1 {
+        width: 25%;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid white;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+    .part2 {
+        width: 75%;
+        background-color: rgb(192, 212, 250);
+        padding: 30px;
+        /* overflow-y: auto; */
+    }
+    .root-home-img{
+        height: 400px;
+    }
+}
+@media screen and (max-width:500px) {
+    .part1 {
+        width: 30%;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid white;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+    .part2 {
+        width: 70%;
+        background-color: rgb(192, 212, 250);
+        padding: 30px;
+        /* overflow-y: auto; */
+    }
+    .root-home-img{
+        height: 280px;
+    }
+    .h2-div {
+        font-size: 13px;
+    }
+    
+}
+@media screen and (max-width:400px) {
+    .part1 {
+        width: 30%;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid white;
+        padding-top: 20px;
+        padding-left: 10px;
+    }
+    .part2 {
+        width: 70%;
+        background-color: rgb(192, 212, 250);
+        padding: 30px;
+        /* overflow-y: auto; */
+    }
+    .root-home-img{
+        height: 230px;
+    }
+    .h2-div {
+        font-size: 10px;
+    }
+    
 }
