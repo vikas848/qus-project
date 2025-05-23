@@ -15,28 +15,25 @@
    <div class="container">
       <img src="{{ url_for('static', filename='img/laptop4.jpg') }}" alt="" class="login-img">
       <div class="login-singin">
-         <div class="login2">
-            <div>
-               <form action="{{ url_for('root_login') }}">
-                  <button type="submit" class="root-btn">Login as Root</button>
-               </form>
+         <form action="{{ url_for('root_login') }}">
+            <button type="submit" class="root-btn">Login as Root</button>
+         </form>
+         <div class="login-form">
+            <form action="/login" method="POST">
+               <h1>login</h1>
+               <div class="input-box">
+                  <input type="email" name="email" placeholder="email" required>
+                  <i class='bx bxs-user'></i>
+               </div>
+               <div class="input-box">
+                  <input type="password" name="password" placeholder="password" required>
+                  <i class='bx bxs-lock'></i>
+               </div>
+               <button type="submit" class="btn">login</button>
+            </form>
+         </div>
 
-               <form action="/login" method="POST">
-                  <h1>login</h1>
-                  <div class="input-box">
-                     <input type="email" name="email" placeholder="email" required>
-                     <i class='bx bxs-user'></i>
-                  </div>
-                  <div class="input-box">
-                     <input type="password" name="password" placeholder="password" required>
-                     <i class='bx bxs-lock'></i>
-                  </div>
-                  <button type="submit" class="btn">login</button>
-                  <!-- <div class="forgot-link">
-               <a href="#">forgot-password</a>
-            </div> -->
-               </form>
-            </div>
+
          <div class="singin">
             <form action="{{ url_for('singin') }}">
                <button type="submit" class="">Sing In</button>

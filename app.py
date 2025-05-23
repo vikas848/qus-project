@@ -409,6 +409,8 @@ def type1():
 
 @app.route('/type1-edit.html', methods=['GET'])
 def type1_edit_html():
+    if not session.get('email2'):
+        return redirect(url_for('root_login'))
     try:
         qus_cursor.execute("SELECT sr, Question, option1, option2, option3, option4, Correct_Option FROM save_qus_type1")
         questions = qus_cursor.fetchall()
