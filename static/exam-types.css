@@ -62,3 +62,209 @@ body {
     border-radius: 10px;
     font-size: 15px;
 }
+@media screen and (max-width:900px) {
+    .qus{
+        height: 40px;
+        width: 80%;
+        font-size: 17px;
+        border-radius: 10px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+        
+    }
+    .option1234{
+        height: 35px;
+        width: 40%;
+        font-size: 16px;  
+        border-radius: 30px;
+        margin-top: 30px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+    }
+}
+@media screen and (max-width:665px) {
+    .part1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 120px;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid rgb(192, 189, 189);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .part2 {
+        margin-left: 120px;
+        padding: 20px;
+        background-color: rgb(192, 212, 250);
+        min-height: 100vh;
+        box-sizing: border-box;
+    } 
+    .options{
+        margin-left: 50px;
+    }
+    .qus{
+        height: 40px;
+        width: 79%;
+        font-size: 15px;
+        border-radius: 10px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+        
+    }
+    .option1234{
+        height: 35px;
+        width: 40%;
+        font-size: 15px;  
+        border-radius: 30px;
+        margin-top: 30px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+    }
+    form{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width:517px) {
+    .qus{
+        height: 40px;
+        width: 100%;
+        font-size: 15px;
+        border-radius: 10px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+        
+    }
+    .options{
+        margin-left: 20px;
+    }
+    .qus-inp{
+        font-size: 0;
+    }
+}
+@media screen and (max-width:500px) {
+    .qus{
+        height: 40px;
+        width: 100%;
+        font-size: 15px;
+        border-radius: 10px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+        
+    }
+    .option1234{
+        height: 35px;
+        width: 90%;
+        font-size: 15px;  
+        border-radius: 30px;
+        margin-top: 30px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+    }
+    .options{
+        margin-left: 5%;
+    }
+    .cor-inp{
+        display: flex;
+        margin-top: 30px;
+    }
+    .correct_option{
+        width: 40%;
+        margin-top: -15px;
+
+    }
+    .qus-inp{
+        font-size: 0;
+    }
+}
+@media screen and (max-width:500px) {
+    .part1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100px;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid rgb(192, 189, 189);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .label{
+        font-size: 14px;
+    }
+    .title{
+        font-size: 23px;
+    }
+    .part2 {
+        margin-left: 100px;
+        padding: 20px;
+        background-color: rgb(192, 212, 250);
+        min-height: 100vh;
+        box-sizing: border-box;
+    }       
+}
+@media screen and (max-width:500px) {
+    .part1 {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 80px;
+        background-color: rgb(214, 218, 226);
+        border-right: 1px solid rgb(192, 189, 189);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .label{
+        font-size: 10px;
+        font-weight: bolder;
+    }
+    .title{
+        font-size: 20px;
+    }
+    .part2 {
+        margin-left: 80px;
+        padding: 20px;
+        background-color: rgb(192, 212, 250);
+        min-height: 100vh;
+        box-sizing: border-box;
+    }          
+}
+@media screen and (max-width:405px) {
+    .option1234{
+        height: 35px;
+        width: 90%;
+        font-size: 15px;  
+        border-radius: 30px;
+        margin-top: 30px;
+        color: black;
+        background-color: white;
+        border: 1px solid black;
+        padding-left: 10px;
+    }
+    .options{
+        width: 100%;
+    }
+    .opt-input{
+        display: flex;
+        align-items: center;
+    }
+    .opt-cd{
+        margin-top: -15px;
+    }
+}
