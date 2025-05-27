@@ -77,6 +77,17 @@ body {
 .opt-abcd{
     margin-top: 38px;
 }
+.correct_option{
+    height: 35px;
+    width: 30%;
+    font-size: 16px;  
+    border-radius: 30px;
+    margin-top: 10px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 20px;
+}
 @media screen and (max-width:900px) {
     .qus{
         height: 40px;
@@ -101,7 +112,7 @@ body {
         padding-left: 10px;
     }
     .opt-cd{
-        margin-top: -15px;
+        margin-top: 0px;
     }
     .opt-input{
         display: flex;
@@ -169,6 +180,7 @@ body {
     }
     .opt-cd{
         margin-left: 0px;
+        margin-top: 0px;
     }
 }
 @media screen and (max-width:517px) {
@@ -214,7 +226,7 @@ body {
     }
     .opt-cd{
         margin-left: -20px;
-        margin-top: -15px;
+        margin-top: -5px;
     }
 }
 @media screen and (max-width:500px) {
@@ -241,7 +253,11 @@ body {
     } 
     .opt-cd{
         display: block;
+        margin-top: 2px;
     } 
+    .opt-abcd{
+        margin-top: 40px;
+    }
 }
 @media screen and (max-width:405px) {
     .option1234{
@@ -263,9 +279,22 @@ body {
         align-items: center;
     }
     .opt-cd{
-        margin-top: -15px;
+        margin-top: 2px;
     }
     .opt-abcd{
         margin-top: 30px;
+    }
+    .correct_option{
+        font-size: 14px;
+       padding-left: 10px;
+    }
+    .cor-inp{
+        margin-left: -10px;
+    }
+    .opt-cor{
+        font-size: 11px;
+    }
+    .sub_btn{
+        margin-left: 80px;
     }
 }
