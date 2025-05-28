@@ -11,7 +11,7 @@
 <body>
     <div action="/exam-type4.html" method="POST" class="container">
         <div class="part1">
-            <label for="option">Select Type:</label>
+            <label for="option" class="label">Select Type:</label>
             <select name="option" id="option" class="select" onchange="handleRedirect(this.value)">
                 <option value="0">option 4</option>
                 <option value="exam-type1.html">Option 1</option>
@@ -37,19 +37,37 @@
                 {% for q in questions %}
                 <h3>Question {{ loop.index }}</h3>
     
+               
                 <input type="hidden" name="sr_{{ loop.index0 }}" value="{{ q[0] }}">
-    
-                Question:<input type="text" disabled name="question_{{ loop.index0 }}" class="qus" placeholder="Question..."value="{{ q[1] }}"><br>
-    
-               <div class="options">A:<input type="text" disabled name="option_a_{{ loop.index0 }}" class="option1 option1234" placeholder="option A..." value="{{ q[2] }}">
-    
-                B:<input type="text" disabled name="option_b_{{ loop.index0 }}" class="option2 option1234" placeholder="option B..." value="{{ q[3] }}"><br>
-    
-                C:<input type="text" disabled name="option_c_{{ loop.index0 }}" class="option3 option1234" placeholder="option C..." value="{{ q[4] }}">
-    
-                D:<input type="text" disabled name="option_d_{{ loop.index0 }}" class="option4 option1234" placeholder="option D..." value="{{ q[5] }}"><br>
-    
-                Correct Option (A/B/C/D):<input type="text" name="correct_option_{{ loop.index0 }}" class="correct_option option1234" placeholder="Correct option..." value="{{ q[6] }}"><br><br> </div>
+
+                <b class="qus-inp">Question:</b><input type="text" disabled name="question_{{ loop.index0 }}"
+                    class="qus" placeholder="Question..." value="{{ q[1] }}"><br>
+
+                <div class="options">
+                    <div class="opt-ab">
+                        <div class="opt-input"><b class="opt-abcd">A:</b><input type="text" disabled
+                                name="option_a_{{ loop.index0 }}" class="option1 option1234" placeholder="option A..."
+                                value="{{ q[2] }}"></div>
+
+                        <div class="opt-input"><b class="opt-abcd">B:</b><input type="text" disabled
+                                name="option_b_{{ loop.index0 }}" class="option2 option1234" placeholder="option B..."
+                                value="{{ q[3] }}"></div>
+                    </div>
+
+                    <div class="opt-cd">
+                        <div class="opt-input"><b class="opt-abcd">C:</b><input type="text" disabled
+                                name="option_c_{{ loop.index0 }}" class="option3 option1234" placeholder="option C..."
+                                value="{{ q[4] }}"></div>
+
+                        <div class="opt-input"><b class="opt-abcd">D:</b><input type="text" disabled
+                                name="option_d_{{ loop.index0 }}" class="option4 option1234" placeholder="option D..."
+                                value="{{ q[5] }}"></div>
+                    </div><br>
+
+                    <div class="cor-inp"><b class="opt-cor">Correct Option (A/B/C/D):</b><input type="text"
+                            name="correct_option_{{ loop.index0 }}" class="correct_option"
+                            placeholder="Correct option..." value="{{ q[6] }}"><br><br> </div>
+                </div>
                 {% endfor %}
                 <button type="submit" class="sub_btn">Exam Submit</button>
                 {% else %}

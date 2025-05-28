@@ -241,6 +241,9 @@ body {
         padding: 10px;
         box-sizing: border-box;
     }
+    .label{
+        font-size: 14px;
+    }
     .part2 {
         margin-left: 100px;
         padding: 20px;
@@ -257,6 +260,9 @@ body {
     } 
     .opt-abcd{
         margin-top: 40px;
+    }
+    .sub_btn{
+        margin-left: 110px;
     }
 }
 @media screen and (max-width:405px) {
@@ -295,6 +301,6 @@ body {
         font-size: 11px;
     }
     .sub_btn{
-        margin-left: 80px;
+        margin-left: 70px;
     }
 }
